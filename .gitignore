@@ -145,3 +145,8 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+######################
+# JDL Graphviz
+######################
+online-store.png
