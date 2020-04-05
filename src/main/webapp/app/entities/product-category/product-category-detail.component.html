@@ -1,7 +1,7 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="productCategory">
-            <h2><span jhiTranslate="storeApp.productCategory.detail.title">Product Category</span> {{ productCategory.id }}</h2>
+            <h2><span jhiTranslate="storeApp.productCategory.detail.title">Product Category</span> {{ productCategory.id }} *jhiHasAnyAuthority="'ROLE_ADMIN'"</h2>
 
             <hr>
 
@@ -19,12 +19,14 @@
             </dl>
 
             <button type="submit"
+                    *jhiHasAnyAuthority="'ROLE_ADMIN'"
                     (click)="previousState()"
                     class="btn btn-info">
                 <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
             </button>
 
             <button type="button"
+                    *jhiHasAnyAuthority="'ROLE_ADMIN'"
                     [routerLink]="['/product-category', productCategory.id, 'edit']"
                     class="btn btn-primary">
                 <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>

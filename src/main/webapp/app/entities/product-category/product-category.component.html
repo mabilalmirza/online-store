@@ -2,7 +2,7 @@
     <h2 id="page-heading">
         <span jhiTranslate="storeApp.productCategory.home.title">Product Categories</span>
 
-        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product-category" [routerLink]="['/product-category/new']">
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-product-category" [routerLink]="['/product-category/new']" *jhiHasAnyAuthority="'ROLE_ADMIN'">
             <fa-icon icon="plus"></fa-icon>
             <span  jhiTranslate="storeApp.productCategory.home.createLabel">
             Create a new Product Category
@@ -43,6 +43,7 @@
                             </button>
 
                             <button type="submit"
+                                    *jhiHasAnyAuthority="'ROLE_ADMIN'"
                                     [routerLink]="['/product-category', productCategory.id, 'edit']"
                                     class="btn btn-primary btn-sm">
                                 <fa-icon icon="pencil-alt"></fa-icon>
@@ -50,6 +51,7 @@
                             </button>
 
                             <button type="submit" (click)="delete(productCategory)"
+                                    *jhiHasAnyAuthority="'ROLE_ADMIN'"
                                     class="btn btn-danger btn-sm">
                                 <fa-icon icon="times"></fa-icon>
                                 <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
