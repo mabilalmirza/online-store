@@ -46,8 +46,8 @@ node {
         archiveArtifacts artifacts: '**/build/libs/*.jar', fingerprint: true
     }
 
-    stage('deployment') {
-        sh "./gradlew deployHeroku --no-daemon"
-    }
+//    stage('deployment') {
+//        sh "./gradlew deployHeroku --no-daemon"
+//    }
 
 }
